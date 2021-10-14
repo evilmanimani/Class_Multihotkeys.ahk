@@ -8,7 +8,7 @@ mk := new MultiHotkeys()
 mk.Add("d"                  , "t200" , "d")      ; send d if the below times out
 mk.Add("dd"                 ,        , "Test"    , "Double hotkey") ; Calling functions
 mk.Add("ddd"                ,        , "Test"    , "Triple hotkey!")
-mk.Add("dddd{}"             ,        , "Test"    , "Quadruple hotkey!!")
+mk.Add("dddd"               ,        , "Test"    , "Quadruple hotkey!!")
 mk.Add("{F1}{F1}"           ,        , "Test2")  ; Calling a label
 mk.Add("^{F1}{F1}"          ,        , "Test3")  ; Sending a string; Ctrl+F1 > F1
 mk.Add("+t"                 ,        , "T")
