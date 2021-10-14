@@ -73,8 +73,8 @@ Class MultiHotkeys {
                 %var% := SubStr(opt,2)
             }
         }
-        RegExMatch(keys, "O)^(?<mods>[!^+#]{1,4})?(?<keys>.*)", keys)
-        mods := keys.mods
+        RegExMatch(keys, "O)^(?<mods>[~!^+#]{1,4})?(?<keys>.*)", keys)
+        mods := StrReplace(keys.mods,"~",,noHide)
         keyStr := keys.keys
         If IsFunc(function) {
             if params
@@ -93,7 +93,7 @@ Class MultiHotkeys {
                 if (A_Index = 1) {
                     pos += StrLen(key)
                     firstKey := key
-                    hk := "$" . mods . RegExReplace(key, "[{}]")
+                    hk := ( noHide ? "~" : "$") . mods . RegExReplace(key, "[{}]")
                     HotKey, % hk, % hotkeyFunc
                 } else {
                     this.ih.KeyOpt(key, "+E+S")
@@ -118,7 +118,7 @@ Class MultiHotkeys {
                 this.KeyDict[hk][keyStr].mods := mods
         }
     }
-
+    
     HotkeyHandler() {
         Suspend, On
         thisHotkey := A_ThisHotkey
