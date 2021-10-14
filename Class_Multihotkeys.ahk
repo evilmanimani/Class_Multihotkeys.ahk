@@ -38,7 +38,7 @@ return
 ;---------------------------------------------------------------------------------------------------------------------------------------
 ;
 ;   Class_Multihotkeys.ahk v0.1 by evilmanimani
-;
+;   https://github.com/evilmanimani/Class_Multihotkeys.ahk
 ;
 ;   Easily set up double, triple, or more hotkeys, and more for pseudo hotstrings, with a configurable timeout
 ;   Can go functions with parameters, labels, or just send characters if it doesn't match a function/label
